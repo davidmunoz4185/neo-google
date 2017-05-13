@@ -95,3 +95,5 @@ cd ..
 ls -lart
 mv imgs IMGs
 exit
+sudo service neo4j status
+exit
