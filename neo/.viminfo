@@ -12,6 +12,8 @@
 
 # Command Line History (newest to oldest):
 :wq
+:! ls -lart ../CSVs/
+:!ls -lart ../AWKs/
 :w
 :set nu
 :q!
@@ -29,20 +31,31 @@
 # Input Line History (newest to oldest):
 
 # Registers:
+"1	LINE	0
+	
 ""-	CHAR	0
-	f
+	$
 
 # File marks:
-'0  1  112  ~/CSVs/museums.csv
-'1  15  145  ~/CSVs/museums.csv
-'2  2  22  /etc/hosts
-'3  26  30  /etc/neo4j/neo4j.conf
-'4  148  9  /etc/neo4j/neo4j.conf
-'5  35  0  /etc/neo4j/neo4j.conf
-'6  54  0  /etc/neo4j/neo4j.conf
-'7  62  55  /etc/neo4j/neo4j.conf
+'0  27  84  ~/BINs/LOAD_NEO.BIN
+'1  4  21  ~/BINs/LOAD_NEO.BIN
+'2  29  0  ~/BINs/LOAD_NEO.BIN
+'3  24  22  ~/BINs/LOAD_NEO.BIN
+'4  17  29  ~/BINs/LOAD_NEO.BIN
+'5  30  5  ~/BINs/LOAD_NEO.BIN
+'6  1  112  ~/CSVs/museums.csv
+'7  15  145  ~/CSVs/museums.csv
+'8  2  22  /etc/hosts
+'9  26  30  /etc/neo4j/neo4j.conf
 
 # Jumplist (newest first):
+-'  27  84  ~/BINs/LOAD_NEO.BIN
+-'  1  0  ~/BINs/LOAD_NEO.BIN
+-'  4  21  ~/BINs/LOAD_NEO.BIN
+-'  29  0  ~/BINs/LOAD_NEO.BIN
+-'  24  22  ~/BINs/LOAD_NEO.BIN
+-'  17  29  ~/BINs/LOAD_NEO.BIN
+-'  30  5  ~/BINs/LOAD_NEO.BIN
 -'  1  112  ~/CSVs/museums.csv
 -'  15  145  ~/CSVs/museums.csv
 -'  9  41  ~/CSVs/museums.csv
@@ -110,8 +123,61 @@
 -'  35  0  /etc/neo4j/neo4j.conf
 -'  54  0  /etc/neo4j/neo4j.conf
 -'  62  55  /etc/neo4j/neo4j.conf
+-'  1  112  ~/CSVs/museums.csv
+-'  15  145  ~/CSVs/museums.csv
+-'  9  41  ~/CSVs/museums.csv
+-'  2  22  /etc/hosts
+-'  1  0  /etc/hosts
+-'  26  30  /etc/neo4j/neo4j.conf
+-'  1  0  /etc/neo4j/neo4j.conf
+-'  148  9  /etc/neo4j/neo4j.conf
+-'  156  0  /etc/neo4j/neo4j.conf
+-'  35  0  /etc/neo4j/neo4j.conf
+-'  54  0  /etc/neo4j/neo4j.conf
+-'  62  55  /etc/neo4j/neo4j.conf
+-'  26  30  /etc/neo4j/neo4j.conf
+-'  1  0  /etc/neo4j/neo4j.conf
+-'  148  9  /etc/neo4j/neo4j.conf
+-'  156  0  /etc/neo4j/neo4j.conf
+-'  35  0  /etc/neo4j/neo4j.conf
+-'  54  0  /etc/neo4j/neo4j.conf
+-'  62  55  /etc/neo4j/neo4j.conf
+-'  2  22  /etc/hosts
+-'  1  0  /etc/hosts
+-'  26  30  /etc/neo4j/neo4j.conf
+-'  1  0  /etc/neo4j/neo4j.conf
 
 # History of marks within files (newest to oldest):
+
+> ~/BINs/LOAD_NEO.BIN
+	"	27	84
+	^	27	85
+	.	27	84
+	+	4	12
+	+	1	1
+	+	6	28
+	+	7	19
+	+	6	20
+	+	7	29
+	+	6	3
+	+	7	3
+	+	9	0
+	+	3	37
+	+	11	22
+	+	10	22
+	+	12	32
+	+	11	32
+	+	17	7
+	+	15	34
+	+	16	35
+	+	17	35
+	+	30	5
+	+	17	29
+	+	26	18
+	+	27	70
+	+	28	23
+	+	4	21
+	+	27	84
 
 > ~/CSVs/museums.csv
 	"	1	112

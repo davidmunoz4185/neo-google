@@ -1,0 +1,30 @@
+#!/bin/bash
+
+### CHECKING DIRECTORIES EXISTENCE ...
+WORK_DIR=$(dirname $0)
+
+AWKs_DIR="${WORK_DIR}/../AWKs"
+CQLs_DIR="${WORK_DIR}/../CQLs"
+CSVs_DIR="${WORK_DIR}/../CSVs"
+
+test ! -d "${AWKs_DIR}" && exit 1
+test ! -d "${CQLs_DIR}" && exit 1
+test ! -d "${CSVs_DIR}" && exit 1
+
+### CHECKING FILES EXISTENCE ...
+AWK_FILE="${AWKs_DIR}/LOAD_NEO.AWK"
+CQL_FILE="${CQLs_DIR}/LOAD_NEO.CQL"
+CSV_FILE="${CSVs_DIR}/LOAD_NEO.CSV"
+
+test ! -f "${AWK_FILE}" && exit 1
+test ! -f "${CSV_FILE}" && exit 1
+
+### CREATING CQL FILE ...
+awk -f "${AWK_FILE}" "${CSV_FILE}" > "${CQL_FILE}"
+test $? -ne 0 && exit 1
+
+### LOAD NEO4J ...
+/usr/bin/neo4j-shell -v -file "${CQL_FILE}" -host 192.168.33.10 -port 1337 >/dev/null
+test $? -ne 0 && exit 1
+
+exit 0 
