@@ -41,7 +41,8 @@ var Museum = function(museum){
 			Neo4j call 2 recover DataBase info ...
 		*/
 		var neo4jTimeout = setTimeout(function(){
-        	self.infoMuseum = '<div> Upps ... it seems neo4j is not available  ... </div>';
+			self.infoMuseum = '<div class="info-window"><div class="museum-title">'  + self.title + '</div>';
+        	self.infoMuseum = self.infoMuseum + '<div> Apologizes, Museum´s Info not available right now ... </div>';
         	self.infowindow.setContent(self.infoMuseum);
   		}, 3000);
 		
@@ -79,9 +80,6 @@ var Museum = function(museum){
 		    },
 
 		    error: function (jqXHR, textStatus, errorThrown) {
-		        //console.log(errorThrown);
-		        console.log(jqXHR);
-		        console.log(textStatus);
 		        self.infoMuseum = '<div> Upps ... it seems neo4j is not available  ... </div>';
         		self.infowindow.setContent(self.infoMuseum);
 		    }
@@ -98,6 +96,10 @@ var Museum = function(museum){
   		}
 		map.panTo(self.marker.getPosition())
 		self.infowindow.setContent(self.infoMuseum);
+		self.marker.setAnimation(google.maps.Animation.BOUNCE);
+        	setTimeout(function() {
+          	self.marker.setAnimation(null);
+      	}, 2100);
 		self.infowindow.open(map,self.marker);
 	};
 
@@ -107,7 +109,9 @@ var Museum = function(museum){
 	this.addListener = google.maps.event.addListener(self.marker,'click', (this.openInfowindow));
 };
 
-// Contains all the locations and search function.
+/*
+	Main ...
+*/
 var locationsModel = {
 	locations:[],
 	query: ko.observable(''),
@@ -117,7 +121,6 @@ museums.forEach(function(museum){
 	locationsModel.locations.push(new Museum(museum));
 });
 
-// Search function for filtering through the list of locations based on the name of the location.
 locationsModel.search = ko.dependentObservable(function() {
 	var self = this;
 	var search = this.query().toLowerCase();
@@ -126,5 +129,4 @@ locationsModel.search = ko.dependentObservable(function() {
 	});
 }, locationsModel);
 
-//function showMuseumInfo
 ko.applyBindings(locationsModel);
