@@ -67,7 +67,10 @@ input[type=text], select {
 		margin-left: -25%; /* same width as sidebar */
 	}
 }
-.jumbotron {
-	border-top-right-radius: 0px; 
-	border-bottom-right-radius: 0px;
+
+#map .col-md-12{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
 }
