@@ -188,7 +188,7 @@ vagrant@vagrant-ubuntu-trusty-64:~$
 
 open a browser and go to http://192.168.33.10:7474 (you´ll need to assign a new password 2 your neo4j user). Once logged you will see something like:
 
-![First login](./IMGs/neo1.jpg)
+![First login](imgs/neo1.jpg)
 
 
 ## How to load neo4j ...
@@ -201,7 +201,7 @@ You only have to execute */home/vagrant/BINs/LOAD_NEO.BIN*:
 
 and verify in Neo4j´s console, the data has been loaded:
 
-![First login](./IMGs/neo2.jpg)
+![First login](imgs/neo2.jpg)
 
 ## How 2 ... before any problem ...
 
