@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Visit Madrid´s Museums ...</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="./js/lib/jquery-3.2.1.js"></script>
+  <script type="text/javascript" src="./js/lib/knockout_v3.4.2.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKF6HT0C44x_nQ3pf5jHNY0qRUXdg7fNk"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 options-box">
+          <div class="col-md-12">
+
+            <h1>Come 2 Madrid ...</h1>
+              <input id="places-search" type="text" placeholder=" Museo del Prado ..." data-bind="value: query, valueUpdate: 'keyup'">
+              <ul data-bind="template: {name: 'location', foreach: search}">
+              </ul>
+          </div>
+        </div>
+        <div class="col-md-9" id="map"></div>
+    </div><!-- /.row -->
+  </div> <!-- /.container -->
+  <script type="text/html" id="location"><li class="location-item" data-bind="text: title, click: openInfowindow"></li></script>
+  <script>
+    
+    var map;
+    
+    var styles = [{"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]}, {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]}, {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]}, {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]}, {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]}, {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]}, {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]}, {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]}];
+    
+    function initialize() {
+      var mapOptions = {
+        zoom: 14,
+        center: new google.maps.LatLng(40.419272, -3.693125),
+        disableDefaultUI: true
+      };
+      map = new google.maps.Map(document.getElementById('map'),
+        mapOptions); 
+      map.set('styles', styles);
+    }  
+    initialize();
+  </script>
+  <script type="text/javascript" src="./js/app.js"></script>
+</body>
+</html>
