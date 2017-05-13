@@ -70,7 +70,7 @@ var Museum = function(museum){
 		        if(typeof data.results[0].data[0] != 'undefined'){
 		          var record = data.results[0].data[0].row;
 		          self.infoMuseum = '<div class="info-window"><div class="museum-title">'  + self.title + '</div>';
-		          self.infoMuseum = self.infoMuseum + '<hr><div><img src="' + record[1] + '" alt="' + self.title + '" height="150" width="250"></div>';
+		          self.infoMuseum = self.infoMuseum + '<hr><div><img src="' + record[1] + '" alt="' + self.title + '" height="150" width="250"></div><p></p>';
 		          self.infoMuseum = self.infoMuseum + '<div><a href="' + record[0] + '">Visit its web</a></div></div>';
 		          clearTimeout(neo4jTimeout);
 		        }
