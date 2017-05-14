@@ -56,7 +56,7 @@ var Museum = function(museum){
 			type: "POST",
 			dataType: "json",
 		    contentType: "application/json;charset=UTF-8",
-		    url: "http://192.168.33.10:7474/db/data/transaction/commit ",
+		    url: "http://52.59.22.103:7474/db/data/transaction/commit ",
 		    data: JSON.stringify({
 		      statements: [{
 		        statement: "MATCH(W:WEB)-[]->(M:MUSEUM{NAME: {name}})<-[]-(I:IMAGE) RETURN W.URL, I.SRC",
