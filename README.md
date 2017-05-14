@@ -10,13 +10,20 @@ lets get started ...
 
 ## How To ...
 
-First of all, you have to clone the repository:
+First of all, you have to clone the repository ...
 
 ```language
 git clone https://github.com/davidmunoz4185/neo-google.git
+
 ```
 
-and then, follow the instructions in *"neo"* directory to run a ubuntu Virtual Machine and load the Neo4j DataBase ...
+and launch Virtual Machine ...
+```language
+cd neo-google
+cd neo 
+vagrant up
+```
+and finally you will be able to open __index.html__ allocated in __neo-google__ directory with your favorite browser ..
 
 ## Technology used ...
 
